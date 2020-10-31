@@ -57,6 +57,7 @@ class SignUp extends React.Component {
 
                 <form className="sign-up-form" onSubmit={this.handleSubmit}>
                     <FormInput
+                        id="displayName"
                         type="text"
                         name="displayName"
                         value={displayName}
@@ -65,6 +66,7 @@ class SignUp extends React.Component {
                         required
                     />
                     <FormInput
+                        id="email"
                         type="email"
                         name="email"
                         value={email}
@@ -73,6 +75,7 @@ class SignUp extends React.Component {
                         required
                     />
                     <FormInput
+                        id="password"
                         type="password"
                         name="password"
                         value={password}
@@ -81,6 +84,7 @@ class SignUp extends React.Component {
                         required
                     />
                     <FormInput
+                        id="confirmPassword"
                         type="password"
                         name="confirmPassword"
                         value={confirmPassword}
