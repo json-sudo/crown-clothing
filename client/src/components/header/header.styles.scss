@@ -9,6 +9,11 @@
     height: 100%;
     width: 70px;
     padding: 25px;
+
+    & svg {
+      width: 100%;
+      
+    }
   }
 
   .options {

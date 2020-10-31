@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div `
 export const LogoContainer = styled(Link)`
     height: 100%;
     width: 70px;
-    padding: 25px;
+    padding: 10px;
 `;
 
 export const OptionsContainer = styled.div `
@@ -20,10 +20,21 @@ export const OptionsContainer = styled.div `
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;    
+    justify-content: space-between;
+
+    @media screen and (max-width: 800px){
+        width: 75%;
+        justify-content: space-between;
+    }
+
+    & a:nth-child(3) {
+        color: #665700;
+        text-decoration: underline;
+    }    
 `;
 
 export const OptionLink = styled(Link) `
-    padding: 10px 15px;
+    padding: 10px 5px;
     cursor: pointer;
+    font-size: 20px;
 `;

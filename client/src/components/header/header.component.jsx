@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ReactComponent as Logo } from "../../assets/crown.svg";
+import CrownLogo from '../../assets/crown-logo.svg';
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
@@ -12,7 +12,7 @@ import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './
 const Header = ({ currentUser, hidden }) => (
     <HeaderContainer>
         <LogoContainer to='/'>
-            <Logo />
+            <CrownLogo />
         </LogoContainer>
         <OptionsContainer>
             <OptionLink to='/shop'>

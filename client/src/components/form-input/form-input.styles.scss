@@ -2,7 +2,7 @@ $sub-color: grey;
 $main-color: black;
 
 @mixin shrinkLabel {
-  top: -14px;
+  top: -18px;
   font-size: 12px;
   color: $main-color;
 }
@@ -20,12 +20,14 @@ $main-color: black;
     display: block;
     width: 100%;
     border: none;
-    border-radius: 0;
+    border-radius: 0; /* prevent an unwanted border-radius on iOS mobile */
     border-bottom: 1px solid $sub-color;
     margin: 25px 0;
 
     &:focus {
       outline: none;
+      box-shadow: 0 0 0 2px #665700;
+      border-radius: 6px;
     }
 
     &:focus ~ .form-input-label {

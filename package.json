@@ -2,8 +2,8 @@
   "name": "crown-clothing-server",
   "version": "1.0.0",
   "engines": {
-    "node": "10.16.0",
-    "npm": "6.10.2"
+    "node": "^12.18.1",
+    "npm": "^6.10.2"
   },
   "scripts": {
     "client": "cd client && yarn start",

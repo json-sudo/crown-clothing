@@ -5,17 +5,25 @@
 
   .title {
     font-size: 28px;
-    font-weight: lighter;
+    // font-weight: lighter;
     margin-bottom: 25px;
     cursor: pointer;
+    width: fit-content;
     
     &:hover {
       color: grey;
     }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #665700;
+      border-radius: 5px;
+    }
   }
 
   .preview {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
   }
 }

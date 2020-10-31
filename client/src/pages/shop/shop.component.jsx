@@ -10,17 +10,17 @@ import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
 class ShopPage extends React.Component {
     componentDidMount() {
         const { fetchCollectionsStartAsync } = this.props;
-        debugger
+        // debugger
         fetchCollectionsStartAsync();
     }
 
     render() {
         const { match } = this.props;
         return (
-            <div className="shop-page">
+            <section style={{padding: 0}} className="shop-page">
                 <Route exact path={`${match.path}`} component={CollectionsOverviewContainer} />
                 <Route path={`${match.path}/:collectionId`} component={CollectionPageContainer} />    
-            </div>
+            </section>
         )
     }
 }

@@ -1,0 +1,29 @@
+.contact-page {
+
+    & h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    & .contact-card {
+        width: 50vw;
+        max-width: 500px;
+        height: 60vh;
+        max-height: 600px;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: lighten(#888, 35%);
+        border: 1px solid #888;
+
+        & span:nth-child(2){
+            text-decoration: underline;
+        }
+    }
+
+    & .contact-item {
+
+    }
+}
