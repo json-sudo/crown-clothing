@@ -1,2 +1,17 @@
 /* Colours */
 $primary-colour: #665700;
+
+/* Mixins */
+@mixin visuallyHidden {
+    position: absolute;
+    @include widthAndHeight(1px, 1px);
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* Support for IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+@mixin widthAndHeight($width, $height){
+    width: $width;
+    height: $height;
+}

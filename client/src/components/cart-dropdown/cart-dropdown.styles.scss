@@ -1,4 +1,5 @@
 .cart-dropdown {
+  backface-visibility: hidden;
   position: absolute;
   width: 240px;
   height: 340px;
@@ -11,6 +12,10 @@
   right: 40px;
   z-index: 5;
 
+  @media (max-width: 768px){
+    height: 380px;
+  }
+
   .empty-message {
     font-size: 18px;
     margin: 15px auto;
@@ -21,6 +26,10 @@
     display: flex;
     flex-direction: column;
     overflow: scroll;
+
+    @media (max-width: 768px){
+      height: 280px;
+    }
   }
 
   button {
