@@ -10,7 +10,6 @@ import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
 class ShopPage extends React.Component {
     componentDidMount() {
         const { fetchCollectionsStartAsync } = this.props;
-        // debugger
         fetchCollectionsStartAsync();
     }
 
