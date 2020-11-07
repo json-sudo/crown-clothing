@@ -12,7 +12,15 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import CrownLogo from '../../assets/crown-logo.svg';
-import { HeaderContainer, LogoContainer, HeaderLinksContainer, HeaderLinksWrapper, HeaderLink, LogInOrOutLink } from './header.styles';
+import { 
+            HeaderContainer, 
+            LogoContainer, 
+            HeaderLinksContainer, 
+            HeaderLinksWrapper, 
+            HeaderLinkList, 
+            HeaderLink,
+            LogInOrOutLink 
+        } from './header.styles';
 
 const Header = ({ currentUser, hidden }) => (
     <HeaderContainer>
@@ -20,20 +28,20 @@ const Header = ({ currentUser, hidden }) => (
 
         <HeaderLinksContainer>
             <HeaderLinksWrapper>
-                <HeaderLink><Link to='/'>Home</Link></HeaderLink>
+                <HeaderLinkList><HeaderLink to='/'>Home</HeaderLink></HeaderLinkList>
 
-                <HeaderLink><Link to='/shop'>Shop</Link></HeaderLink>
+                <HeaderLinkList><HeaderLink to='/shop'>Shop</HeaderLink></HeaderLinkList>
 
-                <HeaderLink><Link to='/contact'>Contact</Link></HeaderLink>
+                <HeaderLinkList><HeaderLink to='/contact'>Contact</HeaderLink></HeaderLinkList>
 
                 {
                     currentUser ?
-                    <HeaderLink>
+                    <HeaderLinkList>
                         <LogInOrOutLink as="div" role="button" onClick={() => auth.signOut()}>Sign Out</LogInOrOutLink>
-                    </HeaderLink> :
-                    <HeaderLink>
+                    </HeaderLinkList> :
+                    <HeaderLinkList>
                         <LogInOrOutLink to='/signin'>Sign In</LogInOrOutLink>
-                    </HeaderLink>
+                    </HeaderLinkList>
                 }
             </HeaderLinksWrapper>
 
