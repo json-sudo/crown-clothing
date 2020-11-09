@@ -1,0 +1,69 @@
+@import '../../base-scss/base-styles.scss';
+
+.drawer-container {
+    @include widthAndHeight(70%, 100vh);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 0 2px 4px rgba(black, 0.3);
+
+    .drawer-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+
+        svg {
+            height: 2rem;
+        }
+
+        span {
+            display: flex;
+            color: $primary-colour;
+            font-size: 1.3em;
+        }
+    
+        .close-btn {
+            border: none;
+            background-color: transparent;
+            color: $secondary-colour;
+            font-size: 3.2em;
+        }
+    }
+
+
+    .drawer-nav {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        li {
+            @include widthAndHeight(100%, 55px);
+
+            a,
+            span {
+                @include widthAndHeight(100%, 100%);
+                display: flex;
+                align-items: center;
+                padding-left: 1.5em;
+                text-decoration: none;
+                color: $primary-colour;
+            }
+        }
+    }
+
+    hr {
+        @include widthAndHeight(85%, 0.5px);
+        margin: 1.5rem auto;
+        background-color: $primary-colour;
+    }
+}
+
+.open {
+    display: flex;
+}

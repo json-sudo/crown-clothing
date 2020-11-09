@@ -51,5 +51,12 @@
         color: white;
         border: none;
     }
+
+    &:focus {
+      background-color: $primary-colour;
+      color: #fff;
+      border: 0.2px solid grey;
+      box-shadow: unset;
+    }
   }
 }

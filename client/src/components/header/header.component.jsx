@@ -1,17 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import DrawerComponent from '../drawer/drawer.component';
+import HamburgerMenu from '../hamburger-menu/hamburger-menu.component';
 
 import { createStructuredSelector } from 'reselect';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
+import DrawerContext from '../../contexts/drawer.context';
+
 import CrownLogo from '../../assets/crown-logo.svg';
+
 import { 
             HeaderContainer, 
             LogoContainer, 
@@ -22,37 +26,54 @@ import {
             LogInOrOutLink 
         } from './header.styles';
 
-const Header = ({ currentUser, hidden }) => (
-    <HeaderContainer>
-        <LogoContainer to='/'><CrownLogo /></LogoContainer>
+const Header = ({ currentUser, hidden }) => {
 
-        <HeaderLinksContainer>
-            <HeaderLinksWrapper>
-                <HeaderLinkList><HeaderLink to='/'>Home</HeaderLink></HeaderLinkList>
+    const [drawerIsOpen, setDrawerIsOpen] = useState(false)
 
-                <HeaderLinkList><HeaderLink to='/shop'>Shop</HeaderLink></HeaderLinkList>
+    const drawerState = {
+        drawerIsOpen: { get: drawerIsOpen, set: setDrawerIsOpen }
+    }
 
-                <HeaderLinkList><HeaderLink to='/contact'>Contact</HeaderLink></HeaderLinkList>
+    return (
+        <HeaderContainer>
+            <LogoContainer to='/'><CrownLogo /></LogoContainer>
 
-                {
-                    currentUser ?
-                    <HeaderLinkList>
-                        <LogInOrOutLink as="div" role="button" onClick={() => auth.signOut()}>Sign Out</LogInOrOutLink>
-                    </HeaderLinkList> :
-                    <HeaderLinkList>
-                        <LogInOrOutLink to='/signin'>Sign In</LogInOrOutLink>
-                    </HeaderLinkList>
-                }
-            </HeaderLinksWrapper>
+            <HeaderLinksContainer>
+                <HeaderLinksWrapper>
+                    <HeaderLinkList><HeaderLink to='/'>Home</HeaderLink></HeaderLinkList>
 
-            <CartIcon />
-        </HeaderLinksContainer>
+                    <HeaderLinkList><HeaderLink to='/shop'>Shop</HeaderLink></HeaderLinkList>
 
-        {
-            hidden ? null : <CartDropdown />
-        }
-    </HeaderContainer>
-)
+                    <HeaderLinkList><HeaderLink to='/contact'>Contact</HeaderLink></HeaderLinkList>
+
+                    {
+                        currentUser ?
+
+                        <HeaderLinkList>
+                            <LogInOrOutLink as="div" role="button" onClick={() => auth.signOut()}>Sign Out</LogInOrOutLink>
+                        </HeaderLinkList> :
+
+                        <HeaderLinkList>
+                            <LogInOrOutLink to='/signin'>Sign In</LogInOrOutLink>
+                        </HeaderLinkList>
+                    }
+                </HeaderLinksWrapper>
+
+                <CartIcon />
+
+                <DrawerContext.Provider value={drawerState}>
+                    <HamburgerMenu />
+
+                    <DrawerComponent />
+                </DrawerContext.Provider>
+            </HeaderLinksContainer>
+
+            {
+                hidden ? null : <CartDropdown />
+            }
+        </HeaderContainer>
+    )
+}
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
