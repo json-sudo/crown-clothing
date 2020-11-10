@@ -6,5 +6,5 @@
 
 [build]
   command = "npm run build"
-  publish="client/build"
+  publish="/build"
   base = "client"
