@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import CrownLogo from '../../assets/crown-logo.svg'
 
 import DrawerContext from '../../contexts/drawer.context'
 
