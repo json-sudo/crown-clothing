@@ -3,6 +3,7 @@ import { Switch, Route, Redirect} from 'react-router-dom';
 
 import Header from './components/header/header.component';
 import SignIn from './components/sign-in/sign-in.component';
+import SignUp from './components/sign-up/sign-up.component';
 
 import CheckoutPage from './pages/checkout/checkout.page';
 import ContactPage from './pages/contact-page/contact.page';
@@ -53,6 +54,7 @@ class App extends React.Component {
           <Route exact path='/checkout' component={CheckoutPage} />
           <Route exact path='/contact' component={ContactPage} />
           <Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignIn />)}  />
+          <Route exact path='/signup' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignUp />)}  />
         </Switch>
 
       </div>

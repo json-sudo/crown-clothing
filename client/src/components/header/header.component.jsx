@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 
-import CartIcon from '../cart-icon/cart-icon.component';
+import CartIconComponent from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import DrawerComponent from '../drawer/drawer.component';
 import HamburgerMenu from '../hamburger-menu/hamburger-menu.component';
@@ -59,7 +59,7 @@ const Header = ({ currentUser, hidden }) => {
                     }
                 </HeaderLinksWrapper>
 
-                <CartIcon />
+                <CartIconComponent />
 
                 <DrawerContext.Provider value={drawerState}>
                     <HamburgerMenu />

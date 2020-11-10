@@ -1,26 +1,60 @@
 @import '../../base-scss/base-styles.scss';
 
 .sign-in {
+    width: 90%;
     display: grid;
     place-items: center;
+    margin: 0 auto;
 
-    h1 {
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+
+    .title {
         font-weight: normal;
         margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+
+    form {
+        @media (min-width: 768px) {
+            width: 90%;
+        }
     }
 
     .buttons {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
         margin-bottom: 1.5rem;
 
-        button:first-of-type {
-            margin-right: 1rem;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        button {
+            width: 80%;
+
+            &:first-of-type {
+                margin-bottom: 1rem;
+
+                @media (min-width: 768px) {
+                    margin-bottom: unset;
+                }
+            }
+
+            @media (min-width: 768px) {
+                width: 48%;
+            }
         }
     }
 
     a {
         text-decoration: underline;
         color: $secondary-colour;
+        text-align: center;
+        margin: 0 auto;
     }
 }

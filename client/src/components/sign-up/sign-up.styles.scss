@@ -1,9 +1,48 @@
+@import '../../base-scss/base-styles.scss';
+
 .sign-up {
-    width: 380px;
-    display: flex;
-    flex-direction: column;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        width: 50%;
+    }
 
     .title{
-        margin: 10px 0;
+        font-weight: normal;
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+
+    .sign-up-form {
+        .form-group {
+            margin: 1.7rem 0;
+
+            &:first-of-type {
+                margin-top: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            width: 90%;
+        }
+
+        .signup-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            width: 50%;
+            margin-bottom: 0.8rem;
+        }
+
+        a {
+            text-decoration: underline;
+            color: $secondary-colour;
+        }
     }
 }

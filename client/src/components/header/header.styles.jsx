@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.header `
-    height: 70px;
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    padding: 0 1em;
 `;
 
 export const LogoContainer = styled.div`
-    height: 100%;
-    width: 70px;
+    height: 90%;
     padding: 10px;
     transition: filter 300ms ease-out;
 
@@ -19,6 +19,11 @@ export const LogoContainer = styled.div`
     &:focus {
         filter: drop-shadow(0 0.25rem 2px grey);
         outline: none;
+    }
+
+    svg {
+        width: auto;
+        height: 100%;
     }
 `;
 
@@ -50,7 +55,7 @@ export const HeaderLink = styled(Link) `
     position: relative;
     padding: 5px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.3rem;
 
     &:after {
         border-top: 2px solid #665700;
@@ -81,7 +86,7 @@ export const LogInOrOutLink = styled(Link) `
     padding: 10px 2px;
     text-decoration: underline;
     color: #665700; 
-    font-size: 20px;
+    font-size: 1.3rem;
     transition: color 300ms ease-out, text-shadow 300ms ease-out;
 
     &:hover,
