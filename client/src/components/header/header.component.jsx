@@ -36,7 +36,7 @@ const Header = ({ currentUser, hidden }) => {
 
     return (
         <HeaderContainer>
-            <LogoContainer to='/'><CrownLogo /></LogoContainer>
+            <LogoContainer><CrownLogo /></LogoContainer>
 
             <HeaderLinksContainer>
                 <HeaderLinksWrapper>
