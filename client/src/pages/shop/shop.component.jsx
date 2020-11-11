@@ -18,7 +18,7 @@ class ShopPage extends React.Component {
     render() {
         const { match } = this.props;
         return (
-            <section style={{padding: 0}} className="shop-page">
+            <section className="shop-page">
                 <h1 className="shop-heading">Check out our collections</h1>
                 <Route exact path={`${match.path}`} component={CollectionsOverviewContainer} />
                 <Route path={`${match.path}/:collectionId`} component={CollectionPageContainer} />    
